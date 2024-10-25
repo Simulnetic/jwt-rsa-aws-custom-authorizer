@@ -57,7 +57,7 @@ You can test the custom authorizer locally. You just need to obtain a valid JWT 
 With a valid token, now you just need to create a local `event.json` file that contains it. Start by copying the sample file:
 
 ```bash
-cp event.json.sample event.json
+cp event.json event.json
 ```
 
 Then replace the `ACCESS_TOKEN` text in that file with the JWT you obtained in the previous step.
