@@ -23,9 +23,9 @@ const getToken = (params) => {
         throw new Error('Expected "event.type" parameter to have value "REQUEST"');
     }
 
-    const tokenString = params.authorizationToken;
+    const tokenString = params.headers.authorization;
     if (!tokenString) {
-        throw new Error('Expected "event.authorizationToken" parameter to be set');
+        throw new Error('Expected "event.headers.authorization" parameter to be set');
     }
 
     const match = tokenString.match(/^Bearer (.*)$/);
