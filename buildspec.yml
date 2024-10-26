@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo Installing Dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Create Bundle...
+      - npm run bundle
+  post_build:
+    commands:
+      - echo Deploy to AWS Lambda with SAM
+      - sam deploy --template-file template.yml --stack-name auth0-lambda-authorizer --resolve-s3 --s3-prefix simulnetic-api --region ap-southeast-2 --no-confirm-changeset --no-fail-on-empty-changeset --capabilities CAPABILITY_IAM --signing-profiles Auth0CustomAuthorizer=SimulneticServerlessAPI

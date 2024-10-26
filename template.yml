@@ -1,0 +1,50 @@
+  AWSTemplateFormatVersion: '2010-09-09'
+  Transform: AWS::Serverless-2016-10-31
+  Description: An AWS Lambda function to provide a Custom Authenticator for AWS API Gateway that verifies RS* signed tokens
+
+  Resources:
+    Auth0CustomAuthorizer:
+      Type: AWS::Serverless::Function
+      Properties:
+        CodeUri: custom-authorizer.zip
+        MemorySize: 128
+        Timeout: 30
+        Handler: index.handler
+        Runtime: nodejs20.x
+        Architectures:
+          - arm64
+        Environment:
+          Variables:
+            JWKS_URI: https://id.simulnetic.com/.well-known/jwks.json
+            AUDIENCE: https://api.simulnetic.com/
+            TOKEN_ISSUER: https://id.simulnetic.com/
+        PackageType: Zip
+        Policies:
+          - Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: '*'
+        RecursiveLoop: Terminate
+        SnapStart:
+          ApplyOn: None
+        Tags:
+          lambda:application: auth0-lambda-authorizer
+          lambda:framework: auth0
+        RuntimeManagementConfig:
+          UpdateRuntimeOn: Auto
+    SimulneticServerlessAPI:
+      Type: AWS::Lambda::CodeSigningConfig
+      Properties:
+        Description: "Code Signing for Simulnetic API"
+        AllowedPublishers:
+          SigningProfileVersionArns:
+            - 'arn:aws:signer:ap-southeast-2:920535833164:/signing-profiles/SimulneticServerlessAPI/8gm2JjNqgy'
+        CodeSigningPolicies:
+          UntrustedArtifactOnDeployment: "Enforce"

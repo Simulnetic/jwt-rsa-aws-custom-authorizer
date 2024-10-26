@@ -1,5 +1,5 @@
 {
-  "name": "lambda-auth0-authenticator",
+  "name": "auth0-lambda-authorizer",
   "version": "0.1.0",
   "description": "An AWS Lambda function to provide a Custom Authenticator for AWS API Gateway that verifies RS* signed tokens",
   "main": "index.js",
