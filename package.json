@@ -1,6 +1,6 @@
 {
   "name": "auth0-lambda-authorizer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "An AWS Lambda function to provide a Custom Authenticator for AWS API Gateway that verifies RS* signed tokens",
   "main": "index.js",
   "scripts": {
@@ -10,18 +10,19 @@
   "author": "Jason Haines",
   "license": "Apache-2.0",
   "dependencies": {
-    "auth0": "^4.10.0",
-    "bluebird": "^3.7.2",
-    "dotenv": "^16.4.5",
+    "auth0": "^2.27.1",
+    "bluebird": "^3.4.6",
+    "dotenv": "^5.0.1",
     "jsonwebtoken": "^9.0.0",
-    "jwks-rsa": "^3.1.0"
+    "jwks-rsa": "^1.1.1"
   },
   "devDependencies": {
-    "lambda-local": "^2.2.0"
+    "aws-sdk": "^2.814.48",
+    "lambda-local": "^1.4.8"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Simulnetic/jwt-rsa-aws-custom-authorizer.git"
+    "url": "git+https://github.com/auth0-samples/lambda-jwt-rsa-authorizer.git"
   },
   "keywords": [
     "aws",
@@ -32,7 +33,7 @@
     "lambda"
   ],
   "bugs": {
-    "url": "https://github.com/Simulnetic/jwt-rsa-aws-custom-authorizer/issues"
+    "url": "https://github.com/auth0-samples/lambda-jwt-rsa-authorizer/issues"
   },
-  "homepage": "https://github.com/Simulnetic/jwt-rsa-aws-custom-authorizer#readme"
+  "homepage": "https://github.com/auth0-samples/lambda-jwt-rsa-authorizer#readme"
 }

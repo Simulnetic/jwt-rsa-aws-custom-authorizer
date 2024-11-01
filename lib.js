@@ -19,13 +19,13 @@ const getPolicyDocument = (effect, resource) => {
 
 // extract and return the Bearer Token from the Lambda event parameters
 const getToken = (params) => {
-    if (!params.type || params.type !== 'REQUEST') {
-        throw new Error('Expected "event.type" parameter to have value "REQUEST"');
+    if (!params.type || params.type !== 'TOKEN') {
+        throw new Error('Expected "event.type" parameter to have value "TOKEN"');
     }
 
-    const tokenString = params.headers.authorization;
+    const tokenString = params.authorizationToken;
     if (!tokenString) {
-        throw new Error('Expected "event.headers.authorization" parameter to be set');
+        throw new Error('Expected "event.authorizationToken" parameter to be set');
     }
 
     const match = tokenString.match(/^Bearer (.*)$/);
