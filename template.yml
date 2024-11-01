@@ -16,7 +16,7 @@
         Environment:
           Variables:
             JWKS_URI: https://id.simulnetic.com/.well-known/jwks.json
-            AUDIENCE: https://api.simulnetic.com/
+            AUDIENCE: https://api.simulnetic.com
             TOKEN_ISSUER: https://id.simulnetic.com/
         PackageType: Zip
         Policies:
