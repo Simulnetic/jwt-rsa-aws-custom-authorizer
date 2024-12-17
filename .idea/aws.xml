@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-    <option name="activeProfile" value="profile:default" />
+    <option name="activeProfile" value="profile:simulnetic-920535833164-AdministratorAccess" />
     <option name="activeRegion" value="ap-southeast-2" />
     <option name="recentlyUsedProfiles">
       <list>
+        <option value="profile:simulnetic-920535833164-AdministratorAccess" />
         <option value="profile:default" />
       </list>
     </option>
@@ -13,5 +14,8 @@
         <option value="ap-southeast-2" />
       </list>
     </option>
+  </component>
+  <component name="explorerToolWindow">
+    <option name="selectedTab" value="Explorer" />
   </component>
 </project>
