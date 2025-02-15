@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-    <option name="activeProfile" value="profile:simulnetic-920535833164-AdministratorAccess" />
+    <option name="activeProfile" value="profile:localstack" />
     <option name="activeRegion" value="ap-southeast-2" />
     <option name="recentlyUsedProfiles">
       <list>
+        <option value="profile:localstack" />
         <option value="profile:simulnetic-920535833164-AdministratorAccess" />
         <option value="profile:default" />
       </list>
