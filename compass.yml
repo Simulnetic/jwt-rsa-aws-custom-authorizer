@@ -1,0 +1,14 @@
+name: jwt-rsa-aws-custom-authorizer
+id: ari:cloud:compass:d926c5b6-8500-4cc0-ae8b-e0b5c4afa665:component/c0bc404a-5512-475b-abf0-d55726924092/3380b01d-2ee9-46a0-8a11-60ea067f919d
+description: An AWS Custom Authorizer for AWS Gateway that support Auth0 Bearer tokens.
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links: []
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:javascript
+  - source:github
+customFields: null
